@@ -1,8 +1,8 @@
-import cv2
-import numpy as np
-import os
+import cv2 #อิมพอทโมดูลไลบรารี่ของ open cv เป็นไลบรารี่สำหรับการทำ computer vision หรือการสร้างดวงตาให้กับคอมพิวเตอร์เพื่อเข้าใจภาพของมนุษย์
+import numpy as np #อิมพอทโมดูลไลบรารี่ numpy อ่านว่านัมพาย หรือ นัมปี้ เป็นโมดูลสำหรับคำนวณทางคณิตศาสตร์สูตรบางที่อยู่นอกเหรือจากไลบรารี่พื้นฐานของไพทอนจะใช้ไลบรารี่นี้แทนเนื่อจากบ่งสูตรนั้นมีความซัพซ้อนในการเขียนหากเขียนเองอาจมีความผิดพลาดได้หรืออาจช้ากว่าเดิม
+import os #อิมพอทโมดูลไลบรารี่ OS เข้ามาในโปรแกรมเป็นโมดูลสำหรับเรียกใช้งานฟังชั่นของวินโดว
 
-recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer = cv2.face.LBPHFaceRecognizer_create() #
 recognizer.read('trainer.yml')
 
 face_cascade_Path = "haarcascade_frontalface_default.xml"
