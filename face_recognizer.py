@@ -48,11 +48,11 @@ while True: #เงื่อนไขทำซ้ำไม่รู้จบ โ
         cv2.putText(img, str(id), (x + 5, y - 5), font, 1, (255, 255, 255), 2) #นำข้อความในตัวแปร id มาแปะลงบนกล่องสี่เหลี่ยม
         cv2.putText(img, str(confidence), (x + 5, y + h - 5), font, 1, (255, 255, 0), 1) #นำข้อความในตัวแปร confidence มาแปะลงบนกล่องสี่เหลี่ยม
 
-    cv2.imshow('camera', img)
+    cv2.imshow('camera', img) # โชวรูปภาพที่ทำการเขียนสี่เหลี่ยม ชื่อ id และค่า confidence ลงไป
     # Escape to exit the webcam / program
-    k = cv2.waitKey(10) & 0xff
-    if k == 27:
+    k = cv2.waitKey(10) & 0xff #การนำรหัสของปุ่มกด แอน ด้วยค่า 0xff
+    if k == 27: #ตรวจสอบเงื่อนไข ถ้ามีการกดปุ่ม exit จะทำการหยุดการทำงานของลูปไม่สิ้นสุดแล้วออกโปรแกรมไป
         break
-print("\n [INFO] Exiting Program.")
-cam.release()
-cv2.destroyAllWindows()
+print("\n [INFO] Exiting Program.") #หลังจากหลุดออกจากลูปอนันจะปริ้นข้อความ [INFO] Exiting Program.
+cam.release() #คืนทรัพยาการระบบของกล้อง
+cv2.destroyAllWindows() #คืนทรัพยากรณ์ระบบของหน้าต่าง window ที่สร้างขั้นมาแสดงรูปภาพจากกล่้องแล้วปิดตัวหน้าต่างไป
